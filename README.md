@@ -1,40 +1,82 @@
-JustPark iOS Technical Test
-===========================
+# BreakingBadSwiftUI
 
-We have created a small technical test for you to showcase how you work. Your task will be to create an iOS application that shows drivers a list of their bookings and the details of anyone booking when they tap into it.
+## Table of contents
+* [Introduction](#introduction)
+* [Application Screens](#application-screens)
+* [Features](#features)
+* [Software And Technologies](#software-and-technologies)
+* [Setup](#setup)
+* [Approach](#approach)
+* [Code Structure And Design Pattern](#code-structure-and-design-pattern)
+* [Future Features And Improvements](#future-features-and-improvements)
 
-Challenge
----------
+## Introduction:
+iOS application to fetch and display a list of Driver's Bookings from the given endpoint, built with a Swift, UIKit.
 
-Retrieve and display a driver's booking results from the following query:
+## Application Screens:
+<p float="left">
+<img src="READMEAssets/list1.png" width="250" height="450">
+<img src="READMEAssets/details1.png" width="250" height="450">
+<img src="READMEAssets/details2.png" width="250" height="450">
+</p>
 
-https://justpark-hiring-json-api.herokuapp.com/api/bookings
+## Features:
+1.  Consumption of API (https://justpark-hiring-json-api.herokuapp.com/api) to fetch the booking listing. (URL Session, Codable)
+2.  Create List view to display the booking list fetched from API. 
+3.  Create Details screen to show the details of the selected Booking.
+4.  Error handling throughout the application.
 
-Retrieve the details of a booking when tapped and create a view to display the details of the bookings to the driver
+## Software And Technologies:
+* MacOS: Big Sur (11.0.1)
+* XCode: 12.5
+* Minimum iOS version: 12.1
+* Swift: 5.1
+* UIKit
 
-https://justpark-hiring-json-api.herokuapp.com/api/booking/:id
+## Setup:
+To run this project, open the TechnicalTaskApp.xcodeproj in XCode and you should be able to run it on the desired simulator without any changes(iPhone).
+You will need to configure your development team in the app target's **"Signing & Capabilities"** tab in order to run it on real device.
 
-There is no authentication required to use these endpoints.
+## Approach:
+1.  On the launch of the app, fetch the character list from API endpoint, using **URL Session** data task.
+2.  Create the Booking Json object from API response data using **JSONDecoder**.
+3.  Use **UIKit** components to show the Bookings in  a TableView.
+4.  Allow user to select List item and show details of selected booking in new view controller.
+5.  Show Errors using **Alert view** appropriately.
+6.  **Protocols-Delegates**: Used protocols for notifying the controller about  data availability and errors if any.
+7.  **Enum**: Used with **Tuple** cases, **generic** type for Success and Failure conditions.
+8.  **Extensions**: Used for adding more functionality to class and modularizing the code.
 
-Requirements
-------------
-- Your code must be in Swift, using UIKit framework compatible with iOS12 onward
-- It must compile and run in the iPhone Simulator across various sized devices
-- Consider how you might scale the app in the future and how the chosen architect will affect this
-- We want to see how you would approach UI/UX, and will be evaluating the app for creativity and quality of the user interface and experience
-- You must test your code to a level you deem acceptable
-- Write a readme on how you approached the work and what you considered during development
+## Code Structure And Design Pattern:
 
-To aid the development process, we've supplied several assets used within the current app, which can be found in the assets folder.
+<img src="READMEAssets/ProjectStructure.png" width="230" height="600">
+
+### View:
+1.  **ListingsViewController** – view responsible for showing the booking list view.
+2.  **BookingsCell** -  view responsible for creating the booking list view cell.
+3.  **DetailsController** – view responsible for showing the selected booking details.
+
+### Model:
+1.  **Booking** – model used for the Booking list json data.
+1.  **BookingDetails** – model used for the Booking Details  json data.
+
+### Networking:
+1.  **NetworkManager** - responsible for managing the network call to get the data from the API.
+2.  **CharacterService** - responsible for managing the API service for booking list data.
+3.  **ResponseDecoder** -  JSON decoder to parse and create the response model using JSONDecoder.
+4.  **EndpointType** - protocol to get the base url and path components.
+5.  **BookingAPI** - enum to specify API services available for Booking app.
+
+### Utility:
+1.  **Constants** – responsible for maintaining the constants used in app.
+2.  **Types** - contains enum types used in app to specify https method type and APIs result(success/failure).
+
+### Other:
+1.  **ServiceDelegate** - protocol to notify when the data is available. (Notify Success or Failure)
+
+## Future Features And Improvements:
+1.  Write Unit Tests and UI test.
+2.  Add more animations.
 
 
-Extra points
-------------
-- It's not required but some use of RxSwift or Observable properties would be good to see
-- At JustPark we create our views in code rather than XIB or Storyboards, so it would be good to see you have a strong grip on programmatic view construction
-- Any Animation will be a bonus
-- Feel free to use any dependencies you deem necessary to execute your solution
 
-If you have any questions, email us, and we can add to this readme.
-
-Good luck!
