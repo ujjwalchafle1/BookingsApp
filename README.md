@@ -1,4 +1,4 @@
-# BreakingBadSwiftUI
+# JustPark iOS
 
 ## Table of contents
 * [Introduction](#introduction)
