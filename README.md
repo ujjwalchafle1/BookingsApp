@@ -21,7 +21,7 @@ iOS application to fetch and display a list of Driver's Bookings from the given 
 </p>
 
 ## Features:
-1.  Consumption of API (https://justpark-hiring-json-api.herokuapp.com/api) to fetch the booking listing. (URL Session, Codable)
+1.  Consumption of API to fetch the booking listing. (URL Session, Codable)
 2.  Create List view to display the booking list fetched from API. 
 3.  Create Details screen to show the details of the selected Booking.
 4.  Error handling throughout the application.
@@ -77,6 +77,7 @@ You will need to configure your development team in the app target's **"Signing 
 ## Future Features And Improvements:
 1.  Write Unit Tests and UI test.
 2.  Add more animations.
-
+3.  Implement show on map functionality.
+4.  Show more details from the API.
 
 
