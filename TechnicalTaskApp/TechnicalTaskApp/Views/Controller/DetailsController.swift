@@ -28,7 +28,6 @@ class DetailsController: UIViewController {
   
   var bookingID: String?
   var bookingTitle: String?
-  var bookingService: BookingService?
 
   var paymentDetails: PaymentMethod?
 
@@ -36,10 +35,35 @@ class DetailsController: UIViewController {
         super.viewDidLoad()
       dropShadow(addressLbl)
       dropShadow(amount)
+//
+//      bookingService = BookingService()
+//      bookingService?.delegate = self
+//      bookingService?.getBookingDetails()
       
-      bookingService = BookingService()
-      bookingService?.delegate = self
-      bookingService?.getBookingDetails()
+      ListingService().getDetails { response in
+        switch response {
+        case .success(let data) :
+            DispatchQueue.main.async {
+              self.titleLbl?.text         = self.bookingTitle
+              self.carRegistration?.text  = data.vehicle.registration
+              self.carMake?.text          = data.vehicle.make
+              self.carModel?.text         = data.vehicle.model
+              
+              self.startDateLbl?.text     = data.formatedStartDate
+              self.endDateLbl?.text       = data.formatedEndDate
+              self.startTimeLbl?.text     = data.startTime
+              self.endTimeLbl?.text       = data.endTime
+
+              self.addressLbl?.text       = "\(data.listing.address.houseNo), \(data.listing.address.address1), \(data.listing.address.city), \(data.listing.address.postalCode)"
+              
+              self.amount?.text           = "Total: \(data.driverTotal.formatted)"
+              
+              self.paymentDetails         = data.paymentMethod
+            }
+        case .failure(let error):
+          print(error)
+        }
+      }
     }
     
   func dropShadow(_ view: UIView){
@@ -61,37 +85,4 @@ class DetailsController: UIViewController {
       let destinationVC = segue.destination as! PaymentDetailsController
       destinationVC.paymentDetails = self.paymentDetails
     }
-    
-
-}
-
-extension DetailsController: ServiceDelegate
-{
-  func didReciveResponse(response: Any)
-  {
-    let response = response as! BookingDetail
-      DispatchQueue.main.async {
-        self.titleLbl?.text         = self.bookingTitle
-        self.carRegistration?.text  = response.data.vehicle.registration
-        self.carMake?.text          = response.data.vehicle.make
-        self.carModel?.text         = response.data.vehicle.model
-        
-        self.startDateLbl?.text     = response.data.formatedStartDate
-        self.endDateLbl?.text       = response.data.formatedEndDate
-        self.startTimeLbl?.text     = response.data.startTime
-        self.endTimeLbl?.text       = response.data.endTime
-
-        self.addressLbl?.text       = "\(response.data.listing.address.houseNo), \(response.data.listing.address.address1), \(response.data.listing.address.city), \(response.data.listing.address.postalCode)"
-        
-        self.amount?.text           = "Total: \(response.data.driverTotal.formatted)"
-        
-        self.paymentDetails         = response.data.paymentMethod
-      }
-  }
-  
-  func didReciveError(error: String) {
-    print(error)
-  }
-  
-
 }

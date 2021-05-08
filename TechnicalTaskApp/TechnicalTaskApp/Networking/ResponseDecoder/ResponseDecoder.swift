@@ -1,6 +1,6 @@
 //
 //  ResponseDecoder.swift
-//  BreakingBadSwiftUI
+//  ClearScore
 //
 //  Created by Ujjwal on 28/02/2021.
 //
@@ -20,10 +20,9 @@ struct ResponseDecoder
   {
     let jsonDecoder = JSONDecoder()
     do {
-      let response = try jsonDecoder.decode(type, from: data)
+      let response = try jsonDecoder.decode(T.self, from: data)
       return response
     } catch let error {
-      print(error)
       throw error
     }
   }

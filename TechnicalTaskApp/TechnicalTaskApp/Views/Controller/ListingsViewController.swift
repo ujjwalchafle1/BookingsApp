@@ -9,21 +9,31 @@
 import UIKit
 
 class ListingsViewController: UITableViewController {
-  var bookings:[Datum] = []
-  var bookingService: BookingService?
-  @IBOutlet weak var loader: UIActivityIndicatorView!
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
 
+  @IBOutlet weak var loader: UIActivityIndicatorView!
+
+  var listingVM: ListingViewModel!
+  
+  override func viewDidLoad()
+  {
+    super.viewDidLoad()
     self.title      = "My Bookings"
-    bookingService  = BookingService()
-    bookingService?.delegate = self
-    bookingService?.getBookingData()
+    callToViewModelForUIUpdate()
   }
-    
+  
+  func callToViewModelForUIUpdate()
+  {
+    self.listingVM = ListingViewModel()
+    self.listingVM.bindingListVMToController = {
+      DispatchQueue.main.async {
+        self.loader.stopAnimating()
+        self.tableView.reloadData()
+      }
+    }
+  }
+  
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return bookings.count
+    return self.listingVM.bookings != nil ? self.listingVM.bookings!.count: 0
   }
   
   override func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,38 +44,21 @@ class ListingsViewController: UITableViewController {
     
     let cell              = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BookingsCell
     cell.selectionStyle   = .none
-    cell.title?.text      = bookings[indexPath.row].title
-    cell.type?.text       = "\(bookings[indexPath.row].id)"
-    cell.price?.text      = bookings[indexPath.row].driverPrice.data.formatted
-    cell.startDate?.text  = bookings[indexPath.row].formatedStartDate
-    cell.time?.text       = "\(bookings[indexPath.row].startTime) - \(bookings[indexPath.row].endTime)"
+    cell.title?.text      = listingVM.bookings[indexPath.row].title
+    cell.type?.text       = "\(listingVM.bookings[indexPath.row].id)"
+    cell.price?.text      = listingVM.bookings[indexPath.row].driverPrice.data.formatted
+    cell.startDate?.text  = listingVM.bookings[indexPath.row].formatedStartDate
+    cell.time?.text       = "\(listingVM.bookings[indexPath.row].startTime) - \(listingVM.bookings[indexPath.row].endTime)"
     
     return cell
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    print(bookings[indexPath.row].title)
+    print(listingVM.bookings[indexPath.row].title)
     let details           =  storyboard?.instantiateViewController(withIdentifier: "DetailsController") as! DetailsController
     details.bookingID     = "4611"//"\(bookings[indexPath.row].id)"
-    details.bookingTitle  = "\(bookings[indexPath.row].title)"
+    details.bookingTitle  = "\(listingVM.bookings[indexPath.row].title)"
 
     self.present(details, animated:true, completion:nil)
-  }
-}
-
-extension ListingsViewController: ServiceDelegate  {
-  
-  func didReciveResponse(response: Any) {
-    let response  = response as! Booking
-    self.bookings = response.data
-    print(response)
-    DispatchQueue.main.async {
-      self.loader.stopAnimating()
-      self.tableView.reloadData()
-    }
-  }
-  
-  func didReciveError(error: String) {
-    print(error)
   }
 }

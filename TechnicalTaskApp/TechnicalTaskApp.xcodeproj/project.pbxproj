@@ -13,19 +13,19 @@
 		0C41C20C263F5FDF00ED5AEE /* BookingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41C20B263F5FDF00ED5AEE /* BookingDetail.swift */; };
 		0C41C210263FFA0B00ED5AEE /* PaymentDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41C20F263FFA0B00ED5AEE /* PaymentDetailsController.swift */; };
 		0C41C2122640031700ED5AEE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41C2112640031700ED5AEE /* Constants.swift */; };
-		0C41C21C26400B9C00ED5AEE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41C21526400B9C00ED5AEE /* NetworkManager.swift */; };
-		0C41C21D26400B9C00ED5AEE /* ResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41C21726400B9C00ED5AEE /* ResponseDecoder.swift */; };
-		0C41C21E26400B9C00ED5AEE /* BookingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41C21826400B9C00ED5AEE /* BookingAPI.swift */; };
-		0C41C21F26400B9C00ED5AEE /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41C21926400B9C00ED5AEE /* EndpointType.swift */; };
-		0C41C22026400B9C00ED5AEE /* BookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41C21B26400B9C00ED5AEE /* BookingService.swift */; };
-		0C41C222264013E100ED5AEE /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41C221264013E100ED5AEE /* Types.swift */; };
+		0C8842602646A0270069847A /* WebServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C88425F2646A0270069847A /* WebServiceConfig.swift */; };
+		0C8842622646A3640069847A /* WebServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8842612646A3640069847A /* WebServiceConstants.swift */; };
+		0C8842642646A4730069847A /* WebServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8842632646A4730069847A /* WebServiceHelper.swift */; };
+		0C8842662646AA6D0069847A /* ListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8842652646AA6D0069847A /* ListingService.swift */; };
+		0C8842682646AB310069847A /* BookingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8842672646AB310069847A /* BookingAPI.swift */; };
+		0C88426B2646C7530069847A /* ListingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C88426A2646C7530069847A /* ListingsViewModel.swift */; };
+		0C88426D2646D56A0069847A /* ResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C88426C2646D56A0069847A /* ResponseDecoder.swift */; };
 		E382D8062510F52000A7D0D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E382D8052510F52000A7D0D0 /* AppDelegate.swift */; };
 		E382D80A2510F52000A7D0D0 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E382D8092510F52000A7D0D0 /* ListingsViewController.swift */; };
 		E382D80D2510F52000A7D0D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E382D80B2510F52000A7D0D0 /* Main.storyboard */; };
 		E382D80F2510F52300A7D0D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E382D80E2510F52300A7D0D0 /* Assets.xcassets */; };
 		E382D8122510F52300A7D0D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E382D8102510F52300A7D0D0 /* LaunchScreen.storyboard */; };
 		E382D81D2510F52300A7D0D0 /* TechnicalTaskAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E382D81C2510F52300A7D0D0 /* TechnicalTaskAppTests.swift */; };
-		E382D8292511000D00A7D0D0 /* ListingRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E382D8282511000D00A7D0D0 /* ListingRequestProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,12 +45,13 @@
 		0C41C20B263F5FDF00ED5AEE /* BookingDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetail.swift; sourceTree = "<group>"; };
 		0C41C20F263FFA0B00ED5AEE /* PaymentDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsController.swift; sourceTree = "<group>"; };
 		0C41C2112640031700ED5AEE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		0C41C21526400B9C00ED5AEE /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		0C41C21726400B9C00ED5AEE /* ResponseDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseDecoder.swift; sourceTree = "<group>"; };
-		0C41C21826400B9C00ED5AEE /* BookingAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingAPI.swift; sourceTree = "<group>"; };
-		0C41C21926400B9C00ED5AEE /* EndpointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
-		0C41C21B26400B9C00ED5AEE /* BookingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingService.swift; sourceTree = "<group>"; };
-		0C41C221264013E100ED5AEE /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		0C88425F2646A0270069847A /* WebServiceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceConfig.swift; sourceTree = "<group>"; };
+		0C8842612646A3640069847A /* WebServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceConstants.swift; sourceTree = "<group>"; };
+		0C8842632646A4730069847A /* WebServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceHelper.swift; sourceTree = "<group>"; };
+		0C8842652646AA6D0069847A /* ListingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingService.swift; sourceTree = "<group>"; };
+		0C8842672646AB310069847A /* BookingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingAPI.swift; sourceTree = "<group>"; };
+		0C88426A2646C7530069847A /* ListingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsViewModel.swift; sourceTree = "<group>"; };
+		0C88426C2646D56A0069847A /* ResponseDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseDecoder.swift; sourceTree = "<group>"; };
 		E382D8022510F52000A7D0D0 /* TechnicalTaskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechnicalTaskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E382D8052510F52000A7D0D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E382D8092510F52000A7D0D0 /* ListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		E382D8182510F52300A7D0D0 /* TechnicalTaskAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechnicalTaskAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E382D81C2510F52300A7D0D0 /* TechnicalTaskAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicalTaskAppTests.swift; sourceTree = "<group>"; };
 		E382D81E2510F52300A7D0D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E382D8282511000D00A7D0D0 /* ListingRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingRequestProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +94,7 @@
 		0C41C201263F0B5F00ED5AEE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0C41C206263F5AFE00ED5AEE /* Controller */,
 				0C41C202263F0B9B00ED5AEE /* BookingsCell.swift */,
 			);
 			path = Views;
@@ -109,49 +110,57 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		0C41C21326400B9C00ED5AEE /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				0C41C21426400B9C00ED5AEE /* Manager */,
-				0C41C21626400B9C00ED5AEE /* Helper */,
-				0C41C21A26400B9C00ED5AEE /* Services */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		0C41C21426400B9C00ED5AEE /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				0C41C21526400B9C00ED5AEE /* NetworkManager.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		0C41C21626400B9C00ED5AEE /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				0C41C21726400B9C00ED5AEE /* ResponseDecoder.swift */,
-				0C41C21826400B9C00ED5AEE /* BookingAPI.swift */,
-				0C41C21926400B9C00ED5AEE /* EndpointType.swift */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		0C41C21A26400B9C00ED5AEE /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				0C41C21B26400B9C00ED5AEE /* BookingService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		0C41C223264025DB00ED5AEE /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				0C41C221264013E100ED5AEE /* Types.swift */,
 				0C41C2112640031700ED5AEE /* Constants.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		0C88425B26469F9F0069847A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0C88425C26469FA90069847A /* WebServiceEngine */,
+				0C88425D26469FC60069847A /* ResponseDecoder */,
+				0C88425E26469FD50069847A /* WebServiceRequests */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		0C88425C26469FA90069847A /* WebServiceEngine */ = {
+			isa = PBXGroup;
+			children = (
+				0C88425F2646A0270069847A /* WebServiceConfig.swift */,
+				0C8842632646A4730069847A /* WebServiceHelper.swift */,
+				0C8842612646A3640069847A /* WebServiceConstants.swift */,
+			);
+			path = WebServiceEngine;
+			sourceTree = "<group>";
+		};
+		0C88425D26469FC60069847A /* ResponseDecoder */ = {
+			isa = PBXGroup;
+			children = (
+				0C88426C2646D56A0069847A /* ResponseDecoder.swift */,
+			);
+			path = ResponseDecoder;
+			sourceTree = "<group>";
+		};
+		0C88425E26469FD50069847A /* WebServiceRequests */ = {
+			isa = PBXGroup;
+			children = (
+				0C8842652646AA6D0069847A /* ListingService.swift */,
+				0C8842672646AB310069847A /* BookingAPI.swift */,
+			);
+			path = WebServiceRequests;
+			sourceTree = "<group>";
+		};
+		0C8842692646C7320069847A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0C88426A2646C7530069847A /* ListingsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E382D7F92510F52000A7D0D0 = {
@@ -175,12 +184,11 @@
 		E382D8042510F52000A7D0D0 /* TechnicalTaskApp */ = {
 			isa = PBXGroup;
 			children = (
-				0C41C223264025DB00ED5AEE /* Utility */,
-				0C41C21326400B9C00ED5AEE /* Network */,
-				0C41C206263F5AFE00ED5AEE /* Controller */,
-				0C41C201263F0B5F00ED5AEE /* Views */,
 				0C41C200263F0B5500ED5AEE /* Model */,
-				E382D8272510FFFE00A7D0D0 /* Requests */,
+				0C41C201263F0B5F00ED5AEE /* Views */,
+				0C8842692646C7320069847A /* ViewModel */,
+				0C88425B26469F9F0069847A /* Networking */,
+				0C41C223264025DB00ED5AEE /* Utility */,
 				E382D8052510F52000A7D0D0 /* AppDelegate.swift */,
 				E382D80B2510F52000A7D0D0 /* Main.storyboard */,
 				E382D80E2510F52300A7D0D0 /* Assets.xcassets */,
@@ -197,14 +205,6 @@
 				E382D81E2510F52300A7D0D0 /* Info.plist */,
 			);
 			path = TechnicalTaskAppTests;
-			sourceTree = "<group>";
-		};
-		E382D8272510FFFE00A7D0D0 /* Requests */ = {
-			isa = PBXGroup;
-			children = (
-				E382D8282511000D00A7D0D0 /* ListingRequestProvider.swift */,
-			);
-			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,17 +309,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E382D80A2510F52000A7D0D0 /* ListingsViewController.swift in Sources */,
+				0C8842662646AA6D0069847A /* ListingService.swift in Sources */,
 				0C41C210263FFA0B00ED5AEE /* PaymentDetailsController.swift in Sources */,
-				0C41C21C26400B9C00ED5AEE /* NetworkManager.swift in Sources */,
-				0C41C222264013E100ED5AEE /* Types.swift in Sources */,
-				0C41C21D26400B9C00ED5AEE /* ResponseDecoder.swift in Sources */,
+				0C88426B2646C7530069847A /* ListingsViewModel.swift in Sources */,
+				0C8842682646AB310069847A /* BookingAPI.swift in Sources */,
 				0C41C1FF263EF6AF00ED5AEE /* Booking.swift in Sources */,
+				0C8842602646A0270069847A /* WebServiceConfig.swift in Sources */,
 				0C41C20C263F5FDF00ED5AEE /* BookingDetail.swift in Sources */,
-				E382D8292511000D00A7D0D0 /* ListingRequestProvider.swift in Sources */,
-				0C41C21E26400B9C00ED5AEE /* BookingAPI.swift in Sources */,
-				0C41C21F26400B9C00ED5AEE /* EndpointType.swift in Sources */,
-				0C41C22026400B9C00ED5AEE /* BookingService.swift in Sources */,
+				0C8842642646A4730069847A /* WebServiceHelper.swift in Sources */,
 				0C41C204263F0B9B00ED5AEE /* BookingsCell.swift in Sources */,
+				0C88426D2646D56A0069847A /* ResponseDecoder.swift in Sources */,
+				0C8842622646A3640069847A /* WebServiceConstants.swift in Sources */,
 				0C41C20A263F5B6700ED5AEE /* DetailsController.swift in Sources */,
 				E382D8062510F52000A7D0D0 /* AppDelegate.swift in Sources */,
 				0C41C2122640031700ED5AEE /* Constants.swift in Sources */,
